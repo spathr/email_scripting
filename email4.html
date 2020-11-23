@@ -1,0 +1,285 @@
+<!--
+Financial Engines | Marketing Development Operations
+RELPLAT: RELPLAT-26095
+HTML AUTHOR: Erin Stipp
+LAST MODIFIED DATE: August 2020
+MODIFIED BY:
+RELPLAT:
+-->
+
+%%[
+/* BRAND_ID verification defensive control element. */
+var @BRAND_ID_VERIFY set @BRAND_ID_VERIFY = 'fe'
+]%%
+
+%%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Initialization Scripts\GLOBAL_INIT")=%%
+
+%%[
+/* Global Content Validation */
+
+ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_DATA_VALIDATION")
+
+]%%
+
+%%[
+/* Brand folder to look for content in */
+var @BRAND_CONTENT_FOLDER
+set @BRAND_CONTENT_FOLDER = "FE"
+]%%
+
+%%[
+var @TNUMBER
+set @TNUMBER = "AM1295827"
+
+/* MA_SUPPORT_PHONE Overwrite */
+set @MA_SUPPORT_PHONE = "(855) 224-1379"
+
+]%%
+
+%%[
+/* Set Subject Line */
+ContentBlockByName("Content Builder\Workplace\(3) Scripts\Initialization Scripts\TRANSLATE_SUBJECT_LINE_FLAG_FE")
+
+/* Set Preheader */
+ContentBlockByName("Content Builder\Workplace\(3) Scripts\Initialization Scripts\TRANSLATE_PREHEADER_FLAG_FE")
+
+]%%
+
+%%[
+
+/* Set Retirement Plan URL for EM3 - Welcome Kit */
+
+IF CONTENT_TYPE == "MA_WELCOME_EM3" OR CONTENT_TYPE == "MA_LEGACY_WELCOME_EM3" THEN
+
+var @retirement_plan_url
+set @retirement_plan_url = Concat(@retirement_plan_base,"&purlParamInfo=",PURL_PARAM_INFO)
+
+ENDIF
+
+]%%
+
+%%[
+/* Temporary Sponsor Plan Name Overwrite RELPLAT-25855 */
+set @SPONSOR_PLAN_NAME = Concat(@SPONSOR_NAME," Plan")
+]%%
+
+%%[
+
+/* MEMBER CHECK FOR REVAMPED EM2 - EM6 */
+
+IF CONTENT_TYPE != "MA_SIGNUP_CONFIRM" AND CONTENT_TYPE != "MA_WELCOME_EM1" THEN
+
+ContentBlockByName("Content Builder\Workplace\(3) Scripts\Function Scripts\MEMBER_STATUS_CHECK")
+
+ENDIF
+
+]%%
+
+%%[
+/* Redundancy Controls (0 Days = Same day Suppression) */
+set @ADR_DAYS_TO_SUPPRESS = 0
+ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\ANY_DAYS_REDUNDANCY_CONTROL")
+]%%
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+ <!--[if gte mso 9]><xml>
+  <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+ </xml><![endif]-->
+
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <!--[if !mso]><!-->
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <!--<![endif]-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta charset="utf-8">
+
+ <title></title>
+
+ <!-- Import FE approved webfont -->
+ <link href="http://fonts.googleapis.com/css?family=Open+Sans:700,600,400,300,200" rel="stylesheet" type="text/css"/>
+
+ <!--  Global MSO Styles -->
+ <!--[if (gte mso 9)|(IE)]>
+ <style type="text/css">
+  table {border-collapse: collapse;}
+  .mso-max-width-330 {max-width: 330px;}
+ </style>
+ <![endif]-->
+
+ <style type="text/css">
+
+  %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Initialization Scripts\GLOBAL_STYLES")=%%
+
+ </style>
+</head>
+
+
+<body style="Margin:0; padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; min-width:100%; background-color:#FFFFFF;">
+<center style="width:100%; table-layout:fixed; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+
+<!-- For older versions of webkit -->
+<div style="max-width:660px;">
+
+<!--===============       BEGIN WRAPPER        =============== -->
+<!--[if (gte mso 9)|(IE)]>
+<table width="660" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0; font-family:Helvetica, sans-serif, 'Open Sans'; color:#53565A; width: 660px;" >
+<tr>
+<td style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0;" >
+<![endif]-->
+ <table align="center" style="border-spacing:0; font-family: Helvetica, sans-serif, 'Open Sans'; color:#53565A; Margin:0 auto; width:100%; max-width:660px;" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_ONE)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_ONE) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_TWO)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_TWO) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_THREE)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_THREE) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_FOUR)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_FOUR) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_FIVE)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_FIVE) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_SIX)) THEN]%%
+
+                  %%[ set @CONTENT_ID = Trim(CONTENT_AREA_SIX) ]%%
+                  %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                  %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_SEVEN)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_SEVEN) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_EIGHT)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_EIGHT) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_NINE)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_NINE) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_TEN)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_TEN) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_ELEVEN)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_ELEVEN) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_TWELVE)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_TWELVE) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_THIRTEEN)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_THIRTEEN) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_FOURTEEN)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_FOURTEEN) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_FIFTEEN)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_FIFTEEN) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(CONTENT_AREA_SIXTEEN)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(CONTENT_AREA_SIXTEEN) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+        %%[IF NOT EMPTY(Trim(FOOTER)) THEN]%%
+
+                    %%[ set @CONTENT_ID = Trim(FOOTER) ]%%
+                    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Modular Email Scripts\MODULAR_CONTENT_PATH_SCRIPT")=%%
+                    %%=ContentBlockByName(@CONTENT_PATH)=%%
+
+        %%[ENDIF]%%
+
+ </table>
+
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+<!-- /\/\/\/\/\/\/\/            END WRAPPER               /\/\/\/\/\/\/\/ -->
+
+</div> <!-- /For older versions of webkit -->
+</center>
+</body>
+%%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Initialization Scripts\COMPLIANCE_TRACKING")=%%
+</html>

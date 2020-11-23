@@ -1,0 +1,391 @@
+<!--
+Financial Engines | Marketing Development Operations
+RELPLAT: RELPLAT-24329
+HTML AUTHOR: Erin Stipp
+LAST MODIFIED DATE: September 2020
+MODIFIED BY: Erin Stipp
+RELPLAT: RELPLAT-26435
+-->
+
+%%[
+
+/* [DEFENSIVE CONTROL - DO NOT REMOVE WITHOUT WRITTEN APPROVAL FROM THE VICE PRESIDENT OF SERVICE DELIVERY] This control checks the recipient's PLAN_OWNER_ID value from CUSTOMER_PROFILE at send time to ensure this email is only delivered to recipient's who have the below PLAN_OWNER_ID */
+
+var @EXPECTED_PLAN_OWNER_ID
+set @EXPECTED_PLAN_OWNER_ID = "baeafa"
+
+/* [END DEFENSIVE CONTROL]*/
+
+]%%
+
+%%[
+
+var @CUSTOM_PROGRAM_NAME
+set @CUSTOM_PROGRAM_NAME = "BAECustomYellowStoplight"
+
+]%%
+
+
+%%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Initialization Scripts\CAMPAIGN_INIT")=%%
+
+%%[
+
+var @button_url
+set @button_url = Concat(@BASE_URL,@USER_LOGIN_TOKEN,"&type=NEW_ENROLLMENT_SITE_HOME",@QUERY_STRING)
+
+var @PREHEADER
+set @PREHEADER = "Increase your retirement savings today."
+
+var @TNUMBER
+set @TNUMBER = ""
+
+var @CUSTOM_FOOTER_CONTENT
+set @CUSTOM_FOOTER_CONTENT = TRUE
+
+]%%
+
+%%[
+/* BRAND_ID verification defensive control element. */
+var @BRAND_ID_VERIFY set @BRAND_ID_VERIFY = 'aon'
+]%%
+
+%%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Initialization Scripts\CAMPAIGN_CONTENT_CHECKS")=%%
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+ <o:AllowPNG/>
+ <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--[if !mso]><!-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=.767">
+<meta charset="utf-8">
+
+
+<title></title>
+
+<!--  Global MSO Styles -->
+    <!--[if (gte mso 9)|(IE)]>
+    <style type="text/css">
+         table {border-collapse: collapse;}
+        .mso-max-width-330 {max-width: 330px;}
+    </style>
+    <![endif]-->
+
+    %%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Initialization Scripts\CAMPAIGN_STYLES")=%%
+
+    @media only screen and (max-width: 659px) {
+    .padding {padding-top:20px !important; padding-bottom:20px !important; padding-right:20px !important; padding-left:20px !important;}
+    }
+
+ </style>
+</head>
+
+
+<body bgcolor="#F3F3F8" style="Margin:0; padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; min-width:100%; background-color:#F3F3F8;">
+<center style="width:100%; table-layout:fixed; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; background-color:#F3F3F8;">
+
+<!-- For older versions of webkit -->
+<div style="max-width:660px;">
+
+<!--===============       BEGIN WRAPPER        =============== -->
+<!--[if (gte mso 9)|(IE)]>
+<table width="660" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0; font-family:Helvetica, Arial, sans-serif; color:#4B4944; width: 660px;" role="presentation">
+<tr>
+<td style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0;">
+<![endif]-->
+            <table align="center" style="border-spacing:0; font-family: Helvetica, Arial, sans-serif; color:#4B4944; Margin:0 auto; width:100%; max-width:660px;" cellpadding="0" cellspacing="0" border="0" role="presentation">
+
+                %%=ContentBlockByName("Content Builder\Workplace\(1) Systematic Content\Systematic Modules\GLB\GLB_CMP_PREHEADER_CONTENT")=%%
+
+                <tr>
+            <td style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; text-align:center; font-size:0;" >
+
+
+<!--===============       LOGO CONTENT        =============== -->
+<!--[if (gte mso 9)|(IE)]>
+<table width="660" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0; font-family: Helvetica, Arial, sans-serif; color:#000000; width:660px;" >
+<tr>
+<td width="660" style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; width:660px;" >
+<![endif]-->
+                <div class="col-12 owa-col-12" style="display:inline-block; vertical-align:top; width:100%;">
+                    <table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td style="padding-top:30px; padding-bottom:30px; padding-right:20px; padding-left:20px; text-align:left; background-color: #FFFFFF;">
+                                <img width="100" style="font-family: Helvetica, Arial, sans-serif; color:#000000; font-size: 22px; font-weight: bold; width:100px; vertical-align:middle;" src="https://image.mail.edelmanfinancialengines.com/lib/fe9a1272756c057975/m/2/Alight_Logo_500x205.png" alt="Alight"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+<!-- /\/\/\/\/\/\/\/            END SECTION               /\/\/\/\/\/\/\/ -->
+
+
+            </td>
+        </tr><tr>
+            <td style="margin:0; padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; font-size: 0; background-color: #FFF200;">
+
+<!--===============       HEADER CONTENT       ===============-->
+<!--[if (gte mso 9)|(IE)]>
+<table width="660" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0; font-family: Helvetica, Arial, sans-serif; color:#000000; width:660px;" >
+<tr>
+<td width="660" valign="top" style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; width:660px;" >
+<![endif]-->
+                <div class="col-12 owa-col-12" style="display:inline-block; vertical-align:top; width:100%; background-color: #FFF200;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;">
+                        <tr style="line-height:30px;">
+                          <td style="text-align:left; padding-top:20px; padding-bottom:20px; padding-right:20px; padding-left:20px;">
+                            <p style="font-family: Helvetica, Arial, sans-serif; color:#000000; font-size: 24px; line-height:30px; Margin: 0; font-weight: bold;">Increase your savings speed.</p>
+                          </td>
+                        </tr>
+                    </table>
+                </div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+<!-- /\/\/\/\/\/\/\/            END SECTION               /\/\/\/\/\/\/\/ -->
+
+
+            </td>
+        </tr><tr>
+            <td style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; text-align:center; font-size:0;background-color: #FFFFFF;">
+
+
+<!--===============       BODY CONTENT        =============== -->
+<!--[if (gte mso 9)|(IE)]>
+<table width="660" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0; font-family: Helvetica, Arial, sans-serif; color:#000000; width:660px;" >
+<tr>
+<td width="660" valign="top" style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; width:660px;" >
+<![endif]-->
+                <div class="col-12 owa-col-12" style="display:inline-block; vertical-align:top; width:100%; background-color: #FFFFFF;">
+                    <table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
+                      <tr style="line-height:26px;">
+                            <td class="padding" style="padding-top:30px; padding-bottom:20px; padding-right:20px; padding-left:20px; text-align:left; background-color: #FFFFFF;"><p class="font-sm-18" style="Margin: 0; font-family: Helvetica, Arial, sans-serif; color:#000000; font-size: 18px; line-height: 26px;"><span style="font-weight:bold;">Hi %%=ProperCase(@FIRST_NAME)=%%,</span></p></td>
+                      </tr>
+                      <tr style="line-height:24px;">
+                            <td class="padding" style="padding-top:0px; padding-bottom:10px; padding-right:20px; padding-left:20px; text-align:left; background-color: #FFFFFF;">
+                              <p class="font-sm-16" style="Margin: 0; font-family: Helvetica, Arial, sans-serif; color:#000000; font-size: 14px; line-height: 24px; font-weight:bold;">You're off to a strong start with your retirement savings&mdash;and that's a great step toward your future financial security. But is there something more you could&nbsp;do?</p>
+                            </td>
+                      </tr>
+                    </table>
+                  </div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+<!-- /\/\/\/\/\/\/\/            END SECTION               /\/\/\/\/\/\/\/ -->
+
+
+            </td>
+        </tr><tr>
+            <td style="margin:0; padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; font-size: 0; background-color: #FFFFFF;">
+
+<!--===============       YELLOW BODY CONTENT       ===============-->
+<!--[if (gte mso 9)|(IE)]>
+<table width="660" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0; font-family: Helvetica, Arial, sans-serif; color:#000000; width:660px;" >
+<tr>
+<td width="165" valign="top" style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; width:165px;" >
+<![endif]-->
+                <div class="col-3 owa-col-3" style="display:inline-block; vertical-align:top; width:100%; background-color: #FFFFFF;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;">
+                        <tr style="line-height:24px;">
+                          <td style="text-align:left; padding-top:10px; padding-bottom:10px; padding-right:0px; padding-left:20px;">
+                            <img src="https://image.mail.edelmanfinancialengines.com/lib/fe9a1272756c057975/m/3/Graph_Up_Icon_AFA_220x237.jpg" height="118" width="110" alt="" style="vertical-align:middle; height: 118px; width: 110px;">
+                          </td>
+                        </tr>
+                    </table>
+                </div>
+<!--[if (gte mso 9)|(IE)]>
+</td><td width="495" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0; width:495px; display:block;" >
+<![endif]-->
+                <div class="col-9 owa-col-9" style="display:inline-block; vertical-align:top; width:100%; background-color: #FFFFFF;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;">
+                        <tr style="line-height:24px;">
+                          <td style="text-align:left; padding-top:10px; padding-bottom:10px; padding-right:20px; padding-left:20px;">
+                            <p class="font-sm-16" style="font-family: Helvetica, Arial, sans-serif; color:#000000; font-size: 14px; line-height:24px; Margin: 0;">Even if you contribute enough to get the full match from BAE Systems, <a style="color: #087EA4;" href="%%=RedirectTo(@RK_URL)=%%" alias="IncrementalIncreaseText">making an incremental increase</a>&mdash;say, one or two percent each year&mdash;is small enough to not hurt your paycheck. Over time, that can add up and help your retirement account a great deal&mdash;and your future self will thank&nbsp;you.</p>
+                          </td>
+                        </tr>
+                        <tr>
+                        <td align="left" bgcolor="#FFFFFF" valign="middle" width="220" style="padding:20px;">
+                          <table border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td align="center" style="-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;" bgcolor="#FFF200"><a href="%%=RedirectTo(@button_url)=%%" target="_blank" style="font-size: 18px; font-family: Helvetica, Arial, sans-serif; text-decoration: none; color: #000000; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; padding: 10px 30px; border: 1px solid #FFF200;  mso-padding-alt: 10px 30px; mso-border-alt: 4px solid #FFF200; display: block;" alias="DiscoverHowButton"><!--[if IE]><span style="font-family: Helvetica, Arial, sans-serif; text-decoration: none; color: #000000; line-height: 30px;">&nbsp;<![endif]--><span style="font-weight:bold;">Discover&nbsp;How&nbsp;We&nbsp;Help</span><!--[if IE]>&nbsp;</span><![endif]--></a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr style="line-height:24px;">
+                          <td style="text-align:left; padding-top:10px; padding-bottom:10px; padding-right:20px; padding-left:20px;">
+                            <p class="font-sm-16" style="font-family: Helvetica, Arial, sans-serif; color:#000000; font-size: 14px; line-height:24px; Margin: 0;">Alight Financial Advisors, LLC is available to provide investment advisory services to plan participants. We can help you develop savings and investing strategies to help you meet your&nbsp;goals.</p>
+                          </td>
+                       </tr>
+                      <tr style="line-height:24px;">
+                          <td style="text-align:left; padding-top:10px; padding-bottom:10px; padding-right:20px; padding-left:20px;">
+                            <p class="font-sm-16" style="font-family: Helvetica, Arial, sans-serif; color:#000000; font-size: 14px; line-height:24px; Margin: 0;">If you're already saving the maximum allowable amount in your pre&#8209tax or Roth 401(k), you may consider an after&#8209tax 401(k)&nbsp;contribution.</p>
+                          </td>
+                       </tr>
+                       <tr style="line-height:24px;">
+                          <td style="text-align:left; padding-top:10px; padding-bottom:40px; padding-right:20px; padding-left:20px;">
+                            <p class="font-sm-16" style="font-family: Helvetica, Arial, sans-serif; color:#000000; font-size: 14px; line-height:24px; Margin: 0;">Please note, in order to protect your information, you will be asked to verify your identity (First and Last name, Zip Code, Date of Birth and last four digits of your SSN) so you can log in securely and view your personalized Retirement Evaluation.  If you have any questions regarding this email, please contact the BAE Systems Benefits Center at <a href="tel:18889004223" style="color:#000000; text-decoration: none; white-space: nowrap;">1 888 900 4223 (4BAE).</a></p>
+                          </td>
+                        </tr>
+                    </table>
+                </div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+<!-- /\/\/\/\/\/\/\/            END SECTION               /\/\/\/\/\/\/\/ -->
+
+
+            </td>
+        </tr>  <tr>
+    <td style="padding-top:0px; padding-bottom:0; padding-right:0; padding-left:0; text-align:center; background-color: #C2C2C3; font-size:0;">
+
+<!--===============       MAKE AN APPOINTMENT CONTENT      ===============-->
+<!--[if (gte mso 9)|(IE)]>
+<table role="presentation" width="660" align="center" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0; font-family:Helvetica, Arial, sans-serif; color:#000000; width:660px;" >
+<tr>
+<td width="550" valign="top" style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; width:550px;" >
+<![endif]-->
+  <div class="col-10 owa-col-10" style="display:inline-block; vertical-align:top; width:100%; background-color: #D6D8D8;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;">
+      <tr style="line-height:18px;">
+        <td align="left" valign="top" style="padding-top:10px; padding-bottom:10px; padding-right:20px; padding-left:20px; text-align:left; background-color: #D6D8D8; color:#000000;">
+          <p class="appleLinks" style="font-family:Helvetica, Arial, sans-serif; font-size: 14px; line-height:18px; color: #000000; margin:0;"><span style="font-weight:bold;">Questions? Call <a href="tel:18889004223" style="text-decoration: none; color: #000000;">1 888 900 4223 (4BAE)</a></span>, and select the Investment Advice option in the menu, Monday&#8209;Friday, 9:00&nbsp;a.m. to 9:00&nbsp;p.m.&nbsp;ET</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+<!--[if (gte mso 9)|(IE)]>
+</td><td width="110" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0; width:110px;" >
+<![endif]-->
+  <div class="col-2 owa-col-2" style="display:inline-block; vertical-align:top; width:100%; background-color:#C2C2C3;">
+    <table class="hide-sm" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0;">
+      <tr>
+        <td style="padding-top:5px; padding-bottom:0px; padding-right:0px; padding-left:0px; text-align:center;">
+          <a href="mailto:advisorinfo@alight.com" style="text-decoration: none; line-height:50px; width:100%; display:inline-block; border:none;"><img src="https://image.mail.edelmanfinancialengines.com/lib/fe9a1272756c057975/m/2/email_us_black_125x50.png" width="110" height="44" alt="Email Us" border="0" style="color:#000000; text-align:center; vertical-align:middle;"></a>
+        </td>
+      </tr>
+    </table>
+  </div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+<!-- /\/\/\/\/\/\/\/            END SECTION               /\/\/\/\/\/\/\/ -->
+
+    </td>
+  </tr><tr>
+            <td style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; text-align:center; font-size:0;">
+
+<!--===============       SUPPLEMENTAL FOOTER CONTENT        =============== -->
+<!--[if (gte mso 9)|(IE)]>
+<table width="660" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0; font-family: Helvetica, Arial, sans-serif; color:#000000; font-size:0; width: 660px;" >
+<tr>
+<td width="660" style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; width: 660px;" >
+<![endif]-->
+          <div class="col-12 owa-col-12" style="display:inline-block; vertical-align:top; width:100%;">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tr style="line-height: 17px;">
+                <td style="padding-top:20px; padding-bottom:0px; padding-right:20px; padding-left:20px; text-align:left;">
+                  <p style="Margin: 0; font-family: Helvetica, Arial, sans-serif; color:#000000; font-size: 12px; line-height: 17px;">&nbsp;</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+<!-- /\/\/\/\/\/\/\/            END SECTION               /\/\/\/\/\/\/\/ -->
+
+            </td>
+          </tr><tr>
+       <td style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; text-align:center; font-size:0; background-color: #F8F9F9;">
+
+<!--===============       GEN_CAMPAIGN_FOOTER_CONTENT_AFA       =============== -->
+<!--[if (gte mso 9)|(IE)]>
+<table role="presentation" width="660" cellpadding="0" cellspacing="0" border="0" style="border-spacing:0; font-family:Helvetica, Arial, sans-serif; color: #88857A; font-size:0; width:660px;" >
+<tr>
+<td width="660" style="padding-top:0; padding-bottom:0; padding-right:0; padding-left:0; width:660px;" >
+<![endif]-->
+  <div class="col-12 owa-col-12" style="display:inline-block; vertical-align:top; width:100%;">
+    <table role="presentation" width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
+      <tr style="line-height:16px;">
+        <td style="padding-top:10px; padding-bottom:0px; padding-right:20px; padding-left:20px; text-align:left;">
+          <p style="font-family:Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16px; color: #88857A; margin:0;"><span style="font-weight:bold;">Don't want to receive this email?</span> You can opt out anytime by <a href="%%=RedirectTo(@edit_email_prefs_url)=%%" style="text-decoration: none; color: #000000; font-weight:bold;" alias="CommPref">updating your communication preferences</a>.</p>
+        </td>
+      </tr>
+      <tr style="line-height:16px;">
+        <td style="padding-top:10px; padding-bottom:0px; padding-right:20px; padding-left:20px; text-align:left; color: #88857A;">
+          <p style="font-family:Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16px; color: #88857A; margin:0;" class="appleLinks">Alight Financial Advisors, LLC (AFA) is available to provide investment advisory services to plan participants. AFA has hired Financial Engines Advisors L.L.C. (FEA) to provide sub-advisory services. AFA is a federally registered investment advisor and wholly owned subsidiary of Alight Solutions, LLC. FEA is a federally registered investment advisor and wholly owned subsidiary of Edelman Financial Engines, LLC. Neither party guarantees future results. All marks are the exclusive property of their respective owners. &copy;%%=Format(Now(),"yyyy")=%% Edelman Financial Engines, LLC. Used with permission.</p>
+        </td>
+      </tr>
+      <tr style="line-height:16px;">
+        <td style="padding-top:10px; padding-bottom:0px; padding-right:20px; padding-left:20px; text-align:left; color: #88857A;">
+          <p style="font-family:Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16px; color: #88857A; margin:0;" class="appleLinks">Alight Financial Advisors, LLC<br />c/o Financial Engines Advisors L.L.C., 4742 North 24th Street, Suite 270, Phoenix, AZ 85016</p>
+        </td>
+      </tr>
+      <tr style="line-height:16px;">
+        <td style="padding-top:10px; padding-bottom:0px; padding-right:20px; padding-left:20px; text-align:left; color: #88857A;">
+          <p style="font-family:Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16px; color: #88857A; margin:0;">Please do not respond to this email as we are not able to respond to messages sent to this address.</p>
+        </td>
+      </tr>
+      <tr style="line-height:16px;">
+        <td style="padding-top:10px; padding-bottom:0px; padding-right:20px; padding-left:20px; text-align:left; color: #88857A;">
+          <p style="font-family:Helvetica, Arial, sans-serif; font-size: 12px; line-height: 16px; color: #88857A; margin:0;">To view this email as a web page, click <a href="%%view_email_url%%" style="color: #000000; text-decoration: none;" alias="ViewAsWeb">here.</a></p>
+        </td>
+      </tr>
+      <tr style="line-height:16px;">
+        <td style="padding-top:10px; padding-bottom:20px; padding-right:20px; padding-left:20px; text-align:left;">
+          <p style="font-family:Helvetica, Arial, sans-serif; color:#88857A; font-size: 12px; line-height:16px; margin:0;">%%=v(@TNUMBER)=%%</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+<!-- /\/\/\/\/\/\/\/            END GEN_CAMPAIGN_FOOTER_CONTENT_AFA               /\/\/\/\/\/\/\/ -->
+
+  </td>
+</tr>
+
+                %%=ContentBlockByName("Content Builder\Workplace\(1) Systematic Content\Systematic Modules\GLB\GLB_CMP_FOOTER_CONTENT")=%%
+
+            </table>
+<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]-->
+<!-- /\/\/\/\/\/\/\/            END WRAPPER               /\/\/\/\/\/\/\/ -->
+</div>
+<!-- /For older versions of webkit -->
+</center>
+</body>
+%%=ContentBlockByName("Content Builder\Workplace\(3) Scripts\Initialization Scripts\COMPLIANCE_TRACKING")=%%
+</html>
